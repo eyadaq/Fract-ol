@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 04:51:35 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/07 23:09:19 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/07 23:25:35 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef struct  s_fract
+{
+	void 	*mlx;
+	
+}				t_fract;
 
+
+void 	 Mandelbrot();
+void 	 Julia();
+void 	 Koch_Snowflake();
 
 #endif
