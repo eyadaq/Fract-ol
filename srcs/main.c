@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 04:54:19 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/08 18:53:00 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/08 18:56:39 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_perror(const char *msg, int errno)
 	exit(errno);
 }
 
-int 		check_argument(char *s)
+int		check_argument(char *s)
 {
 	if (ft_strncmp(s, "Julia", 5) == 0)
 	{
@@ -36,7 +36,7 @@ int 		check_argument(char *s)
 		return (0);
 }
 
-int	main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	t_fract		*fractol;
 	int			type;
