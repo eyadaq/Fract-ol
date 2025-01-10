@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 04:51:35 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/11 00:59:12 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/11 01:30:39 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 typedef struct  s_fract
 {
 	void 	*mlx;
+	void 	*window;
+	void 	*image;
 	
 }				t_fract;
 
@@ -32,4 +34,5 @@ void			Julia();
 void			Snowflake();
 
 void			ft_perror(const char *msg, int errno);
+
 #endif
