@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 04:54:19 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/11 02:21:25 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/11 02:26:16 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,15 @@ int		check_argument(char *s)
 int main(int argc, char **argv)
 {
     t_fract data;
-
-    if (argc != 2 || !check_argument(argv[1]))
+	int		type;
+	
+	type = check_argument(argv[1]);
+    if (argc != 2 || !type)
         ft_perror("Invalid argument Choose one from these: Julia,Mandelbrot,Snowflake", 4242);
     data.mlx = mlx_init();
     if (!data.mlx)
         ft_perror("MLX initialization failed", 4242);
-    data.win = mlx_new_window(data.mlx, WIDTH, HEIGHT, "Fractol");
+    data.win = mlx_new_window(data.mlx, WIDTH, HEIGHT, argv[1]);
     if (!data.win)
         ft_perror("Window creation failed", 4242);
     data.img = mlx_new_image(data.mlx, WIDTH, HEIGHT);
@@ -74,7 +76,7 @@ int main(int argc, char **argv)
     data.offset_y = 0.0;
     data.c.re = -0.7;
     data.c.im = 0.27015;
-    if (ft_strcmp(argv[1], "Julia") == 0)
+    if (type == 1)
         julia(&data);
     mlx_key_hook(data.win, handle_key, &data);
     mlx_loop(data.mlx);

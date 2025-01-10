@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 00:59:38 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/11 02:04:54 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/11 02:23:10 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,22 +44,20 @@ void 	put_pixel(t_fract *data, int x, int y, int color) {
 
 int handle_key(int keycode, t_fract *data)
 {
-    if (keycode == 53) // Escape key
+    if (keycode == 53) // Escape
         exit(0);
-    else if (keycode == 126) // Up arrow key
+    else if (keycode == 126) // Up
         data->offset_y -= 0.1 / data->zoom;
-    else if (keycode == 125) // Down arrow key
+    else if (keycode == 125) // Down
         data->offset_y += 0.1 / data->zoom;
-    else if (keycode == 123) // Left arrow key
+    else if (keycode == 123) // Left
         data->offset_x -= 0.1 / data->zoom;
-    else if (keycode == 124) // Right arrow key
+    else if (keycode == 124) // Right
         data->offset_x += 0.1 / data->zoom;
-    else if (keycode == 69) // Plus key
+    else if (keycode == 69) // +
         data->zoom *= 1.1;
-    else if (keycode == 78) // Minus key
+    else if (keycode == 78) // -
         data->zoom /= 1.1;
-
-    // Redraw the fractal with updated parameters
     julia(data);
     return (0);
 }
