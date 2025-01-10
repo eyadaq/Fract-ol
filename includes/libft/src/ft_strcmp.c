@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 04:51:35 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/11 00:59:12 by eaqrabaw         ###   ########.fr       */
+/*   Created: 2025/01/11 00:18:05 by eaqrabaw          #+#    #+#             */
+/*   Updated: 2025/01/11 00:22:25 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
-# define WIDTH 1280
-# define HEIGHT 720
+#include "../headers/libft.h"
 
-# include <mlx.h>
-# include <math.h>
-#include "includes/libft/headers/libft.h"
-
-typedef struct  s_fract
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	void 	*mlx;
-	
-}				t_fract;
+	unsigned int	i;
 
-void			Mandelbrot();
-
-void			Julia();
-
-void			Snowflake();
-
-void			ft_perror(const char *msg, int errno);
-#endif
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (((unsigned char)s1[i] - (unsigned char)s2[i]));
+}

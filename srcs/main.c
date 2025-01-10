@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 04:54:19 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/08 18:56:39 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/11 00:34:53 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,29 @@
 
 void	ft_perror(const char *msg, int errno)
 {
-	perror(msg);
-	exit(errno);
+	if (errno == 4242)
+	{
+		ft_pustr_fd(msg, 2);
+		exit(1);
+	}
+	else 
+	{
+		perror(msg);
+		exit(errno);
+	}
+}
+void			Mandelbrot()
+{
+	
+}
+void			Julia()
+{
+	
+}
+
+void			Snowflake()
+{
+
 }
 
 int		check_argument(char *s)
@@ -43,5 +64,10 @@ int		main(int argc, char **argv)
 	
 	type = check_argument(argv[1]);
 	if (argc != 2 || !(type))
-		ft_perror("Please Choose one type of fractol : (Mandelbrot / Julia / Koch Snowflake)", 1);
+		ft_perror("Please Choose one type of fractol : (Mandelbrot / Julia / Koch Snowflake)", 4242);
+	fractol = malloc (sizeof(t_fract));
+	if (!fractol)
+		ft_perror("Malloc Failed", 1);
+	fractol->mlx = mlx_init();
+	
 }
