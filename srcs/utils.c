@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 00:59:38 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/11 02:23:10 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/18 20:27:50 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,38 +26,19 @@ void	ft_perror(char *msg, int errno)
 	}
 }
 
-int 	get_color(int iter)
+void        initialize(t_data *data)
 {
-    if (iter == MAX_ITER)
-        return (0x000000);
-    return (0xFFFFFF * iter / MAX_ITER);
+    data->mlx = mlx_init();
+    if (!data->mlx)
+        ft_perror("MLX Initialization failed", 10);
+    data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, "Window1");
+    if (!data->win)
+        ft_perror("Window initialization failed", 11);
+    data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
+    if (!data->img)
+        ft_perror("Image creation failed", 12);
+    data->addr = mlx_get_data_addr(data->img, &data->bpp, &data->line_length, &data->endian);
+    if (!data->addr)
+        ft_perror("Failed to fetch image address", 13);
 }
 
-void 	put_pixel(t_fract *data, int x, int y, int color) {
-    char *dst;
-
-    if (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT) {
-        dst = data->addr + (y * data->line_length + x * (data->bpp / 8));
-        *(unsigned int *)dst = color;
-    }
-}
-
-int handle_key(int keycode, t_fract *data)
-{
-    if (keycode == 53) // Escape
-        exit(0);
-    else if (keycode == 126) // Up
-        data->offset_y -= 0.1 / data->zoom;
-    else if (keycode == 125) // Down
-        data->offset_y += 0.1 / data->zoom;
-    else if (keycode == 123) // Left
-        data->offset_x -= 0.1 / data->zoom;
-    else if (keycode == 124) // Right
-        data->offset_x += 0.1 / data->zoom;
-    else if (keycode == 69) // +
-        data->zoom *= 1.1;
-    else if (keycode == 78) // -
-        data->zoom /= 1.1;
-    julia(data);
-    return (0);
-}
