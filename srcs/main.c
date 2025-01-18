@@ -6,15 +6,11 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 04:54:19 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/18 20:28:37 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/18 20:40:00 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
-
-
-
-#include <math.h>
 
 void    draw_circle(t_data *data, int xCenter, int yCenter, int radius)
 {

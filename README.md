@@ -1,5 +1,7 @@
 # Fractol
 
+![Fractol Logo](fract-ole.png)
+
 ## Project Description
 
 **Fractol** is a project from the 42 curriculum that focuses on the creation of fractals using C and the MiniLibX graphics library. The goal is to implement a program that visualizes popular fractals, such as the Mandelbrot set and Julia set, and allows users to interact with them through zooming, panning, and changing iterations. This project will improve your understanding of mathematical algorithms, complex numbers, and graphical rendering.
