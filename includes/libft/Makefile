@@ -68,17 +68,19 @@ SRC = 	ft_atoi \
       	get_next_line
 
 srcDir = src/
-headersDIR = headers/
+INCDIR = headers/
+INCS = libft.h
 objDir = obj/
 SRCS = $(addprefix $(srcDir), $(addsuffix .c, $(SRC)))
 OBJS = $(SRCS:$(srcDir)%.c=$(objDir)%.o)
+INC = $(addprefix $(INCDIR), $(INCS))
 
 all: $(Name)
 
 $(Name): $(OBJS)
 	@$(AR) $(Name) $(OBJS)
 
-$(objDir)%.o: $(srcDir)%.c | $(objDir)
+$(objDir)%.o: $(srcDir)%.c $(INC) | $(objDir)
 	@$(CC) $(Flags) -c $< -o $@
 
 $(objDir):
