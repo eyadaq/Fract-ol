@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 00:59:38 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/18 20:27:50 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/18 23:08:47 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,12 @@ void	ft_perror(char *msg, int errno)
 	}
 }
 
-void        initialize(t_data *data)
+int    ft_handle_key(int  keycode, t_data *data)
 {
-    data->mlx = mlx_init();
-    if (!data->mlx)
-        ft_perror("MLX Initialization failed", 10);
-    data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, "Window1");
-    if (!data->win)
-        ft_perror("Window initialization failed", 11);
-    data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
-    if (!data->img)
-        ft_perror("Image creation failed", 12);
-    data->addr = mlx_get_data_addr(data->img, &data->bpp, &data->line_length, &data->endian);
-    if (!data->addr)
-        ft_perror("Failed to fetch image address", 13);
+    if (keycode == ESC_KEY)
+    {
+        ft_destory(data);
+        exit(1);
+    }
+	return (0);
 }
-

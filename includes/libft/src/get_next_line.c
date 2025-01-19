@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "../headers/get_next_line.h"
+#include "../headers/libft.h"
 
 char	*fill_line(char *buffer)
 {

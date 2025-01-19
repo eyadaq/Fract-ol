@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/ft_printf.h"
+#include "../headers/libft.h"
 
 static int	ft_putptr_helper(size_t hexa, char x)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/ft_printf.h"
+#include "../headers/libft.h"
 
 int	ft_putunsigned(unsigned int digit)
 {
