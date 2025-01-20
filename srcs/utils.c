@@ -6,11 +6,13 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 00:59:38 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/18 23:08:47 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/20 11:41:36 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
+
+// ZOOM AND MOVEING IN THE IMAGE PLUS THE COLORS 
 
 void	ft_perror(char *msg, int errno)
 {
