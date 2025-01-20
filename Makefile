@@ -15,7 +15,10 @@ CC = cc
 Flags = -Wall -Wextra -Werror
 SRCS =  main \
 		utils \
-		mlx_utils
+		mlx_utils\
+		burning_ship\
+		julia\
+		mandelbrot
 srcDir = srcs/
 incDir = includes/
 objDir = obj/

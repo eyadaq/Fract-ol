@@ -34,14 +34,14 @@ void        ft_initialize(t_data *data)
 {
     data->mlx = mlx_init();
     if (!data->mlx)
-        ft_perror("MLX Initialization failed", 10);
-    data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, "Window1");
+        ft_perror("MLX Initialization failed\n", 4242);
+    data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, "Fract-ol");
     if (!data->win)
-        ft_perror("Window initialization failed", 11);
+        ft_perror("Window initialization failed\n", 4242);
     data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
     if (!data->img)
-        ft_perror("Image creation failed", 12);
+        ft_perror("Image creation failed\n", 4242);
     data->addr = mlx_get_data_addr(data->img, &data->bpp, &data->line_length, &data->endian);
     if (!data->addr)
-        ft_perror("Failed to fetch image address", 13);
+        ft_perror("Failed to fetch image address\n", 4242);
 }

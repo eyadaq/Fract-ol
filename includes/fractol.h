@@ -26,8 +26,13 @@
 
 # include "./libft/headers/libft.h"
 # include <math.h>
-# include <mlx.h>
+# include "../minilibx-linux/mlx.h"
 
+typedef struct s_complex
+{
+	double		im;
+	double		re;
+}				t_complex;
 typedef struct s_data
 {
 	char	*addr;
@@ -44,5 +49,7 @@ void		ft_perror(char *msg, int errno);
 void		ft_destory(t_data *data);
 void		ft_mlx_pixel_put(t_data *data, int x, int y, int color);
 void		ft_initialize(t_data *data);
+void		draw_mandelbrot(t_data *data);
+void 		draw_julia(t_data *data);
 
 #endif
