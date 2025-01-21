@@ -6,7 +6,7 @@
 #    By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/03 05:04:44 by eaqrabaw          #+#    #+#              #
-#    Updated: 2025/01/18 23:00:25 by eaqrabaw         ###   ########.fr        #
+#    Updated: 2025/01/21 23:30:31 by eaqrabaw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,12 @@ Flags = -Wall -Wextra -Werror
 SRCS =  main \
 		utils \
 		mlx_utils\
-		burning_ship\
-		julia\
-		mandelbrot
+	
+
+# burning_ship\
+# 	julia\
+# 	mandelbrot
+		
 srcDir = srcs/
 incDir = includes/
 objDir = obj/

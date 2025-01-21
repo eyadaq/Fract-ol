@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:31:19 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/20 11:32:26 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/21 22:54:51 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void initialize_c(t_complex *c, int x, int y)
 {
-    c->re = (x - WIDTH / 2.0) * 4.0 / WIDTH;
-    c->im = (y - HEIGHT / 2.0) * 4.0 / HEIGHT;
+    c->re = (x - WIDTH / 2.0) * 4.0 / 800;
+    c->im = (y - HEIGHT / 2.0) * 4.0 / 800;
 }
 
 static int iterate_mandelbrot(t_complex *z, t_complex c)
@@ -56,7 +56,7 @@ void draw_mandelbrot(t_data *data)
             z.im = 0;
             iter = iterate_mandelbrot(&z, c);
             if (iter < MAX_ITER)
-                ft_mlx_pixel_put(data, x, y, 0x00FF00);
+                ft_mlx_pixel_put(data, x, y, 0xC60C30 * iter * 10);
             else
                 ft_mlx_pixel_put(data, x, y, 0x000000);
         }

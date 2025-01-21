@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 20:28:15 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/18 23:04:26 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/22 00:36:43 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,9 @@ void        ft_initialize(t_data *data)
     data->addr = mlx_get_data_addr(data->img, &data->bpp, &data->line_length, &data->endian);
     if (!data->addr)
         ft_perror("Failed to fetch image address\n", 4242);
+
+    data->zoom_factor = 100;
+    data->max_iterations = 15;
+    data->center.x = -0.5;
+    data->center.y = 0;
 }
