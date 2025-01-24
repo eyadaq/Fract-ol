@@ -6,12 +6,18 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:07:20 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2024/09/02 23:49:16 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:25:57 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/libft.h"
 
+/**
+
+	* Allocates (with malloc(3)) and returns a copy of the string given as argument.
+ * The memory thus allocated must be freed when it is no longer needed.
+ * If the allocation fails, the function returns NULL.
+ */
 char	*ft_strdup(const char *s1)
 {
 	char	*s2;

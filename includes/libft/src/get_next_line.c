@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 02:56:13 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2024/11/11 20:34:22 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:23:29 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,22 @@ char	*read_and_store(int fd, char **s)
 	return (free(buffer), *s);
 }
 
+/**
+ * Reads a line from a file descriptor and returns it.
+ *
+ * The function reads from a file descriptor until it encounters a newline
+ * character or reaches the end of the file. It stores the remaining characters
+ * in a static string for subsequent calls. The function returns the line read
+ * or NULL if an error occurs or if the end of the file is reached.
+ *
+ * The function also handles the case where the file descriptor is invalid or
+ * if the buffer size is less than or equal to 0.
+ *
+ * The function does not append a newline character to the end of the line.
+ *
+ * @param fd The file descriptor to read from.
+ * @return The line read from the file descriptor or NULL if an error occurs.
+ */
 char	*get_next_line(int fd)
 {
 	static char	*s;

@@ -6,21 +6,17 @@
 #    By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/03 05:04:44 by eaqrabaw          #+#    #+#              #
-#    Updated: 2025/01/21 23:30:31 by eaqrabaw         ###   ########.fr        #
+#    Updated: 2025/01/22 22:35:50 by eaqrabaw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 Name = fractol
 CC = cc
 Flags = -Wall -Wextra -Werror
-SRCS =  main \
-		utils \
+SRCS =  fractols\
+		main \
 		mlx_utils\
-	
-
-# burning_ship\
-# 	julia\
-# 	mandelbrot
+		utils
 		
 srcDir = srcs/
 incDir = includes/

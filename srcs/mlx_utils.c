@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 20:28:15 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/22 00:36:43 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 02:25:02 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,24 @@ void	ft_mlx_pixel_put(t_data *data, int x, int y, int color)
     *(unsigned int*)dst = color;
 }
 
+void    calc_coordinate(t_data *data, t_point *point, int x, int y)
+{
+    point->x = (x - WIDTH / 2.0) / data->zoom_factor + data->center.x;
+    point->y = (y - HEIGHT / 2.0) / data->zoom_factor + data->center.y;
+    point->y = -point->y;
+}
+
 void	ft_destory(t_data *data)
 {
-	mlx_destroy_image(data->mlx, data->img);
-	mlx_destroy_window(data->mlx, data->win);
-	mlx_destroy_display(data->mlx);
-	free(data->mlx);
+    if (data == NULL)
+        return;
+    if (data->img != NULL)
+        mlx_destroy_image(data->mlx, data->img);
+    if (data->win != NULL)
+	    mlx_destroy_window(data->mlx, data->win);
+    if (data->mlx != NULL)
+	    mlx_destroy_display(data->mlx);
+    free(data->mlx);
 }
 
 void        ft_initialize(t_data *data)
@@ -37,16 +49,20 @@ void        ft_initialize(t_data *data)
         ft_perror("MLX Initialization failed\n", 4242);
     data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, "Fract-ol");
     if (!data->win)
+    {
         ft_perror("Window initialization failed\n", 4242);
+        ft_destory(data);
+    }
     data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
     if (!data->img)
+    {
         ft_perror("Image creation failed\n", 4242);
+        ft_destory(data);
+    }   
     data->addr = mlx_get_data_addr(data->img, &data->bpp, &data->line_length, &data->endian);
     if (!data->addr)
-        ft_perror("Failed to fetch image address\n", 4242);
-
-    data->zoom_factor = 100;
-    data->max_iterations = 15;
-    data->center.x = -0.5;
-    data->center.y = 0;
+    {
+        ft_perror("Failed to fetch image address\n", 4242);  
+        ft_destory(data); 
+    }
 }

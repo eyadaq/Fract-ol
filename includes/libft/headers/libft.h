@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 22:23:35 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/19 22:03:43 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:34:37 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ char				*ft_strrchr(const char *s, int c);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*get_next_line(int fd);
+double				ft_atod(const char *str);
 int					ft_atoi(const char *nptr);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);

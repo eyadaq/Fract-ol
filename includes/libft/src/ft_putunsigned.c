@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eaqrabaw <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 19:21:05 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2024/09/12 19:48:03 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:28:36 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/libft.h"
 
+/**
+ * Prints an unsigned integer to the standard output.
+ *
+ * @param digit the unsigned integer to print.
+ * @return the number of characters printed.
+ */
 int	ft_putunsigned(unsigned int digit)
 {
 	int	c;

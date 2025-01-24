@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eaqrabaw <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 04:38:42 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2024/09/12 04:47:36 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:28:40 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,16 @@ static int	ft_putptr_helper(size_t hexa, char x)
 	c += ft_putchar_fd(digits[hexa % 16], 1);
 	return (c);
 }
+
+/**
+ * Prints a pointer address in hexadecimal format to the standard output.
+ * 
+ * The function will print "0x" followed by the address in lowercase
+ * hexadecimal representation. If the pointer is NULL, it will print "(nil)".
+ *
+ * @param ptr The pointer to be printed.
+ * @return The number of characters printed.
+ */
 
 int	ft_putptr(void *ptr)
 {

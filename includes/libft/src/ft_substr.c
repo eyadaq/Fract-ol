@@ -6,12 +6,19 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:19:43 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2024/09/02 23:41:26 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:23:50 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/libft.h"
 
+/**
+ * Allocates (with malloc(3)) and returns a substring from the string `s`.
+ * The substring begins at index `start` and is of maximum size `len`.
+ * If `start` and `len` aren't referring to a valid substring, the behavior
+ * is undefined. If reading past the end of string, the behavior is undefined.
+ * If the allocation fails, the function returns NULL.
+ */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*res;

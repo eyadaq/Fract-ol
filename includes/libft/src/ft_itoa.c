@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 09:54:57 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2024/09/03 23:22:34 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:22:55 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,15 @@ static size_t	get_len(int n)
 	return (len);
 }
 
+/**
+ * Allocates (with malloc(3)) and returns a string representing the
+ * integer received as an argument.
+ * Negative numbers must be handled.
+ *
+ * @param n The integer to convert.
+ * @return The string representing the integer.
+ *         NULL if the allocation fails.
+ */
 char	*ft_itoa(int n)
 {
 	char			*result;

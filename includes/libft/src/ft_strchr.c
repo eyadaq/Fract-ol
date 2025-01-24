@@ -6,12 +6,20 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 19:39:19 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2024/08/31 20:38:08 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:26:10 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/libft.h"
 
+/**
+ * Locates the first occurrence of `c` in the string `s`.
+ *
+ * @param s The string in which to search.
+ * @param c The character to locate, converted to a `char`.
+ * @return A pointer to the first occurrence of `c` in the string `s`,
+ *         or NULL if the character is not found.
+ */
 char	*ft_strchr(const char *s, int c)
 {
 	int	x;

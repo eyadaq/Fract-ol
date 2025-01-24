@@ -6,13 +6,11 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 00:59:38 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/22 00:38:02 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/22 21:37:41 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
-
-// ZOOM AND MOVEING IN THE IMAGE PLUS THE COLORS 
 
 void	ft_perror(char *msg, int errno)
 {
@@ -35,57 +33,55 @@ int    ft_handle_key(int  keycode, t_data *data)
         ft_destory(data);
         exit(1);
     }
-
-	printf("%d\n", keycode);
-
-	if (keycode == 65362) //up
-	{
-		data->center.y -= 0.1;
-	} 
-	if (keycode == 65364) //down
-	{
+	else if (keycode == ARROW_UP)
+		data->center.y -= 0.1; 
+	else if (keycode == ARROW_DOWN)
 		data->center.y += 0.1;
-	} 
-	if (keycode == 65363) //right
-	{
+	else if (keycode == ARROW_RIGHT)
 		data->center.x += 0.1;
-	} 
-	if (keycode == 65361) //left
-	{
+	else if (keycode == ARROW_LEFT)
 		data->center.x -= 0.1;
-	}
-
-	if (keycode == 61)
+	else if (keycode == PLUS_KEY)
 		data->max_iterations *= 1.5;
-	if (keycode == 45 && data->max_iterations > 5)
+	else if (keycode == MINUS_KEY && data->max_iterations > 5)
 		data->max_iterations *= 0.75;
-	
 	draw_canves(data);
-
 	return (0);
 }
 
 int ft_handle_mouse(int button, int x, int y, t_data *data)
 {
-	
-	// printf("%d %d\n", x, y);
-
-	if (button == 4)
+	if (button == ZOOM_IN)
 	{
 		calc_coordinate(data, &data->center, x, y);
 		data->center.y = -data->center.y;
 		data->zoom_factor *= 1.1;
 		data->max_iterations += 1;
 	}
-	if (button == 5)
+	if (button == ZOOM_OUT)
 	{
 		data->zoom_factor *= 0.9;
 		data->max_iterations -= 1;
 	}
-
-	printf("%d\n", data->max_iterations);
-
 	draw_canves(data);
-
 	return (0);
+}
+
+
+t_complex	complex_number_add(t_complex z1, t_complex z2)
+{
+	t_complex	result;
+
+	result.re = z1.re + z2.re;
+	result.im = z1.im + z2.im;
+	return (result);
+}
+
+t_complex	complex_number_squared(t_complex z)
+{
+	t_complex	result;
+
+	result.re = z.re * z.re - z.im * z.im;
+	result.im = 2 * z.re * z.im;
+	return (result);
 }

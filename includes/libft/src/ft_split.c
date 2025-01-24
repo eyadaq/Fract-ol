@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 19:44:56 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2024/11/22 02:41:44 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:48:03 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,20 @@ static char	*word_dup(const char *str, size_t len)
 	word[i] = '\0';
 	return (word);
 }
+/**
+ * ft_split
+	- Splits a string into an array of substrings using a specified delimiter.
+ *
+ * @s: The input string to be split.
+ * @c: The delimiter character used to split the string.
+ *
+ * Return:
+ *
+	- A dynamically allocated array of strings (substrings) split by the delimiter.
+ * - Each substring is null-terminated.
+ * - The last element of the array is a NULL pointer to mark the end.
+ * - Returns NULL if memory allocation fails or if the input string is NULL.
+ */
 
 char	**ft_split(char const *s, char c)
 {

@@ -6,11 +6,22 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 08:14:39 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2024/09/02 20:32:29 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:24:27 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/libft.h"
+
+/**
+ * Compares up to n characters of the null-terminated strings s1 and s2
+ * lexicographically. The comparison is done using unsigned characters.
+ * 
+ * @param s1 The first string to compare.
+ * @param s2 The second string to compare.
+ * @param n The maximum number of characters to compare.
+ * @return An integer less than, equal to, or greater than zero if s1 is found,
+ * respectively, to be less than, to match, or be greater than s2.
+ */
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

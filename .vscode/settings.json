@@ -59,6 +59,8 @@
   "42header.email": "eaqrabaw@student.42amman.com",
   "42header.username": "eaqrabaw",
   "files.associations": {
-    "fractol.h": "c"
+    "fractol.h": "c",
+    "libft.h": "c",
+    "math.h": "c"
   }
 }

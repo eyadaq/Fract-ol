@@ -6,12 +6,25 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 10:20:02 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2024/11/30 03:00:31 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:20:37 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/libft.h"
 
+/**
+ * @brief Converts a string to a long integer.
+ *
+
+	* @details This function takes a string and returns its long integer equivalent.
+ * It ignores leading whitespace, and if the string starts with a + or - sign,
+ * it will be recognized as a sign for the number. Otherwise, it will start
+ * reading digits from the start of the string. If it encounters a non-digit
+ * character, it will stop reading and return the number it has read so far.
+ *
+ * @param str the string to convert
+ * @return the long integer equivalent of the string
+ */
 long	ft_atol(const char *str)
 {
 	long	num;

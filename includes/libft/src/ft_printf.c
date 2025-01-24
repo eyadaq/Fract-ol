@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 02:06:24 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2024/09/12 04:57:42 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:29:07 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,29 @@ static int	ft_format(char c, va_list list)
 		return (-1);
 }
 
+/**
+ * Prints a formatted string to stdout.
+ *
+ * This function takes a format string as the first argument and
+ * any number of arguments as additional arguments. The format string
+ * contains format specifiers that determine how the arguments are
+ * printed. The supported format specifiers are:
+ *
+ *   %i, %d: int
+ *   %s: char *
+ *   %x, %X: unsigned int
+ *   %c: char
+ *   %p: void *
+ *   %u: unsigned int
+ *   %%%
+ *
+ * The function returns the number of characters printed. If an error
+ * occurs, the function returns -1.
+ *
+ * @param var The format string.
+ * @param ... Any number of arguments.
+ * @return The number of characters printed.
+ */
 int	ft_printf(const char *var, ...)
 {
 	va_list	list;

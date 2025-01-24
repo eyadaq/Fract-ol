@@ -6,12 +6,22 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 06:54:21 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2024/09/01 08:28:17 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:25:31 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/libft.h"
 
+/**
+ * Copies up to (size - 1) characters from the NUL-terminated string
+ * `src` to `dest`, NUL-terminating the result.
+ *
+ * @param dest The destination string.
+ * @param src The source string.
+ * @param size The maximum number of characters to copy.
+ *
+ * @return The length of the source string.
+ */
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	counter;

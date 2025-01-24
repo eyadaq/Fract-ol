@@ -6,13 +6,19 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 20:17:23 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2024/09/03 20:17:32 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 01:23:14 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+/**
+ * Deletes and frees all elements of the list.
+ *
+ * @param lst The address of a pointer to the first link of the list.
+ * @param del The address of the function to delete the content of each element.
+ */
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*start;
 	t_list	*temp;
