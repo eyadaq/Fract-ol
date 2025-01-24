@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 00:59:38 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/22 21:37:41 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 02:37:58 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,22 +53,22 @@ int ft_handle_mouse(int button, int x, int y, t_data *data)
 {
 	if (button == ZOOM_IN)
 	{
-		calc_coordinate(data, &data->center, x, y);
+		ft_calc_coordinate(data, &data->center, x, y);
 		data->center.y = -data->center.y;
 		data->zoom_factor *= 1.1;
-		data->max_iterations += 1;
+		data->max_iterations = ITERATIONS_ENHANCER(data->max_iterations);
 	}
 	if (button == ZOOM_OUT)
 	{
 		data->zoom_factor *= 0.9;
-		data->max_iterations -= 1;
+		data->max_iterations = ITERATIONS_ENHANCER(data->max_iterations);
 	}
-	draw_canves(data);
+	ft_draw_canves(data);
 	return (0);
 }
 
 
-t_complex	complex_number_add(t_complex z1, t_complex z2)
+t_complex	ft_complex_number_add(t_complex z1, t_complex z2)
 {
 	t_complex	result;
 
@@ -77,7 +77,7 @@ t_complex	complex_number_add(t_complex z1, t_complex z2)
 	return (result);
 }
 
-t_complex	complex_number_squared(t_complex z)
+t_complex	ft_complex_number_squared(t_complex z)
 {
 	t_complex	result;
 

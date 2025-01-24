@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 04:51:35 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/25 02:24:20 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 02:28:00 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define ARROW_RIGHT 65363
 # define PLUS_KEY 61
 # define MINUS_KEY 45
+# define ITERATIONS_ENHANCER (x) ((0.3 *(x)) + 30)
 
 # include "./libft/headers/libft.h"
 # include <math.h>

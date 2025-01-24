@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 20:28:15 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/25 02:25:02 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 02:36:50 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_mlx_pixel_put(t_data *data, int x, int y, int color)
     *(unsigned int*)dst = color;
 }
 
-void    calc_coordinate(t_data *data, t_point *point, int x, int y)
+void    ft_calc_coordinate(t_data *data, t_point *point, int x, int y)
 {
     point->x = (x - WIDTH / 2.0) / data->zoom_factor + data->center.x;
     point->y = (y - HEIGHT / 2.0) / data->zoom_factor + data->center.y;
