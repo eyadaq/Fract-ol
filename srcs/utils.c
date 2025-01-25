@@ -6,35 +6,26 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 00:59:38 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/25 02:37:58 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/25 03:13:03 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-void	ft_perror(char *msg, int errno)
+int	ft_iterations_enhancer(int value)
 {
-	if (errno == 4242)
-	{
-		ft_putstr_fd(msg, 2);
-		exit(1);
-	}
-	else 
-	{
-		perror(msg);
-		exit(errno);
-	}
+	return ((0.3 * value) + 30);
 }
 
-int    ft_handle_key(int  keycode, t_data *data)
+int	ft_handle_key(int keycode, t_data *data)
 {
-    if (keycode == ESC_KEY)
-    {
-        ft_destory(data);
-        exit(1);
-    }
+	if (keycode == ESC_KEY)
+	{
+		ft_destory(data);
+		exit(1);
+	}
 	else if (keycode == ARROW_UP)
-		data->center.y -= 0.1; 
+		data->center.y -= 0.1;
 	else if (keycode == ARROW_DOWN)
 		data->center.y += 0.1;
 	else if (keycode == ARROW_RIGHT)
@@ -45,28 +36,27 @@ int    ft_handle_key(int  keycode, t_data *data)
 		data->max_iterations *= 1.5;
 	else if (keycode == MINUS_KEY && data->max_iterations > 5)
 		data->max_iterations *= 0.75;
-	draw_canves(data);
+	ft_draw_canves(data);
 	return (0);
 }
 
-int ft_handle_mouse(int button, int x, int y, t_data *data)
+int	ft_handle_mouse(int button, int x, int y, t_data *data)
 {
 	if (button == ZOOM_IN)
 	{
 		ft_calc_coordinate(data, &data->center, x, y);
 		data->center.y = -data->center.y;
 		data->zoom_factor *= 1.1;
-		data->max_iterations = ITERATIONS_ENHANCER(data->max_iterations);
+		data->max_iterations = ft_iterations_enhancer(data->max_iterations);
 	}
 	if (button == ZOOM_OUT)
 	{
 		data->zoom_factor *= 0.9;
-		data->max_iterations = ITERATIONS_ENHANCER(data->max_iterations);
+		data->max_iterations = ft_iterations_enhancer(data->max_iterations);
 	}
 	ft_draw_canves(data);
 	return (0);
 }
-
 
 t_complex	ft_complex_number_add(t_complex z1, t_complex z2)
 {
