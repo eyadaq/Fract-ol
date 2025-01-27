@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 20:28:15 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/27 20:45:24 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/27 23:24:53 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_calc_coordinate(t_data *data, t_point *point, int x, int y)
 {
 	point->x = (x - WIDTH / 2.0) / data->zoom_factor + data->center.x;
 	point->y = (y - HEIGHT / 2.0) / data->zoom_factor + data->center.y;
-	point->y = -point->y;
+	//point->y = -point->y;
 }
 
 void	ft_destory(t_data *data)

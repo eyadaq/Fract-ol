@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 21:48:48 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/25 03:00:31 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/27 23:30:49 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int	ft_calc_pixel_burning_ship(t_data *data, t_point point)
 
 void	ft_get_color(t_color *color, int iter)
 {
+	
 	color->full_color = iter * 10;
 	color->red = 255 - iter * 2;
 	color->green = 150;

@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 00:59:38 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/27 21:18:01 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/27 23:20:22 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,27 +39,43 @@ int	ft_handle_key(int keycode, t_data *data)
 	ft_draw_canves(data);
 	return (0);
 }
-
-
-
-int	ft_handle_mouse(int button, int x, int y, t_data *data)
+int ft_handle_mouse(int button, int x, int y, t_data *data)
 {
-	if (button == ZOOM_IN)
-	{
-		ft_calc_coordinate(data, &data->center, x, y);
-		data->center.y = -data->center.y;
-		data->zoom_factor *= 1.1;
-		data->max_iterations = ft_iterations_enhancer(data->max_iterations);
-	}
-	if (button == ZOOM_OUT)
-	{
-		data->zoom_factor *= 0.9;
-		data->max_iterations = ft_iterations_enhancer(data->max_iterations);
-	}
-	ft_draw_canves(data);
-	return (0);
-}
+    t_point mouse_point;
 
+    // Calculate the point in the complex plane corresponding to the mouse position
+    ft_calc_coordinate(data, &mouse_point, x, y);
+
+    if (button == ZOOM_IN)
+    {
+        // Zoom in by a factor of 1.1
+        data->zoom_factor *= 1.1;
+
+        // Adjust the center to keep the point under the mouse fixed
+        data->center.x += (mouse_point.x - data->center.x) * (1 - 1 / 1.1);
+        data->center.y += (mouse_point.y - data->center.y) * (1 - 1 / 1.1);
+
+        // Increase iterations for more detail
+        data->max_iterations = ft_iterations_enhancer(data->max_iterations);
+    }
+    else if (button == ZOOM_OUT)
+    {
+        // Zoom out by a factor of 0.9
+        data->zoom_factor *= 0.9;
+
+        // Adjust the center to keep the point under the mouse fixed
+        data->center.x += (mouse_point.x - data->center.x) * (1 - 1 / 0.9);
+        data->center.y += (mouse_point.y - data->center.y) * (1 - 1 / 0.9);
+
+        // Decrease iterations to save computation
+        data->max_iterations = ft_iterations_enhancer(data->max_iterations);
+    }
+
+    // Redraw the canvas with the updated zoom and center
+    ft_draw_canves(data);
+
+    return (0);
+}
 t_complex	ft_complex_number_add(t_complex z1, t_complex z2)
 {
 	t_complex	result;
