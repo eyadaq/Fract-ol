@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 00:34:28 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/30 00:35:23 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/30 00:42:14 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,6 @@ t_complex	ft_complex_number_squared(t_complex z)
 	result.re = z.re * z.re - z.im * z.im;
 	result.im = 2 * z.re * z.im;
 	return (result);
-}
-
-void	ft_mlx_pixel_put(t_data *data, int x, int y, int color)
-{
-	char	*dst;
-
-	if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT)
-		return ;
-	dst = data->addr + (y * data->line_length + x * (data->bpp / 8));
-	*(unsigned int *)dst = color;
 }
 
 void	ft_calc_coordinate(t_data *data, t_point *point, int x, int y)

@@ -6,19 +6,19 @@
 #    By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/03 05:04:44 by eaqrabaw          #+#    #+#              #
-#    Updated: 2025/01/30 00:35:46 by eaqrabaw         ###   ########.fr        #
+#    Updated: 2025/01/30 00:48:30 by eaqrabaw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 Name = fractol
 CC = cc
 Flags = -Wall -Wextra -Werror
-SRCS =  fractols\
-		main \
-		mlx_utils\
-		utils\
-		handle_input\
-		calculations
+SRCS =  calculations\
+	fractols\
+	handle_input\
+	main \
+	mlx_utils\
+	utils
 		
 srcDir = srcs/
 incDir = includes/
