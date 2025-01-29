@@ -6,7 +6,7 @@
 #    By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/03 05:04:44 by eaqrabaw          #+#    #+#              #
-#    Updated: 2025/01/22 22:35:50 by eaqrabaw         ###   ########.fr        #
+#    Updated: 2025/01/30 00:35:46 by eaqrabaw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ Flags = -Wall -Wextra -Werror
 SRCS =  fractols\
 		main \
 		mlx_utils\
-		utils
+		utils\
+		handle_input\
+		calculations
 		
 srcDir = srcs/
 incDir = includes/

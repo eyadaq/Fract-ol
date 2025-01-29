@@ -6,41 +6,11 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 20:28:15 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/29 23:15:11 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/30 00:35:56 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
-
-void	ft_perror(char *msg, int errno)
-{
-	if (errno == 4242)
-	{
-		ft_putstr_fd(msg, 2);
-		exit(1);
-	}
-	else
-	{
-		perror(msg);
-		exit(errno);
-	}
-}
-
-void	ft_mlx_pixel_put(t_data *data, int x, int y, int color)
-{
-	char	*dst;
-
-	if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT)
-		return ;
-	dst = data->addr + (y * data->line_length + x * (data->bpp / 8));
-	*(unsigned int *)dst = color;
-}
-
-void	ft_calc_coordinate(t_data *data, t_point *point, int x, int y)
-{
-	point->x = (x - WIDTH / 2.0) / data->zoom_factor + data->center.x;
-	point->y = (y - HEIGHT / 2.0) / data->zoom_factor + data->center.y;
-}
 
 void	ft_destory(t_data *data)
 {

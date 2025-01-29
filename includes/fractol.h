@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 04:51:35 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/29 23:38:32 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/30 00:38:07 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,13 @@ int					ft_handle_mouse(int button, int x, int y, t_data *data);
 int					ft_iterations_enhancer(int value);
 t_complex			ft_complex_number_add(t_complex z1, t_complex z2);
 t_complex			ft_complex_number_squared(t_complex z);
-void				ft_calc_coordinate(t_data *data, t_point *point, int x,
-						int y);
+void				ft_calc_coordinate(t_data *data, t_point *point, int x, int y);
 void				ft_destory(t_data *data);
 void				ft_draw_canves(t_data *data);
 void				ft_initialize(t_data *data);
 void				ft_mlx_pixel_put(t_data *data, int x, int y, int color);
 void				ft_perror(char *msg, int errno);
+void				ft_validate_input(int argc, char *argv[], t_data *data);
+void				ft_get_color(t_color *color, int iter, int max_iter, int fractal_type);
 
 #endif

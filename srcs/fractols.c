@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 21:48:48 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/29 23:44:38 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/30 00:37:23 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,53 +76,6 @@ static int	ft_calc_pixel_burning_ship(t_data *data, t_point point)
 		iteration++;
 	}
 	return (0);
-}
-static void burning_ship_color(t_color *color, double t)
-{
-	if (t < 0.5)
-		{
-			color->red = (int)(255 * t * 2);
-			color->green = 0;
-			color->blue = 0;
-		}
-		else if (t < 0.75)
-		{
-			color->red = 255;
-			color->green = (int)(255 * (t - 0.5) * 4);
-			color->blue = 0;
-		}
-		else
-		{
-			color->red = 255;
-			color->green = 255;
-			color->blue = (int)(255 * (t - 0.75) * 4);
-		}
-}
-static void	ft_get_color(t_color *color, int iter, int max_iter, int fractal_type)
-{
-	double	t;
-
-	if (iter == max_iter)
-	{
-		color->full_color = 0x000000;
-		return ;
-	}
-	t = (double)iter / max_iter;
-	if (fractal_type == JULIA && iter != max_iter)
-	{
-		color->red   = (int)(9 * (1 - t) * t * t * t * 255);
-    	color->green = (int)(15 * (1 - t) * (1 - t) * t * t * 255);
-    	color->blue  = (int)(8.5 * (1 - t) * (1 - t) * (1 - t) * t * 255);
-	}
-	else if (fractal_type == BURNING_SHIP && iter != max_iter)
-		burning_ship_color(color, t);
-	else if (fractal_type == MANDELBROT && iter != max_iter)
-	{
-		color->red = (int)(9 * (1 - t) * t * t * t * 255);
-		color->green = (int)(15 * (1 - t) * (1 - t) * t * t * 255);
-		color->blue = (int)(8.5 * (1 - t) * (1 - t) * (1 - t) * t * 255);
-	}
-	color->full_color = (color->red << 16) | (color->green << 8) | color->blue;
 }
 
 void	ft_draw_canves(t_data *data)
