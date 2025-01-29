@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 00:33:08 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/30 00:47:27 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/30 00:56:01 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ void	ft_validate_input(int argc, char *argv[], t_data *data)
 {
 	if (argc == 4)
 	{
-		data->julia_constant.im = ft_atod(argv[2]);
-		data->julia_constant.re = ft_atod(argv[3]);
+		data->julia_constant.re = ft_atod(argv[2]);
+		data->julia_constant.im = ft_atod(argv[3]);
 		ft_draw_fractal(data, argv[1]);
 	}
 	else if (argc == 2)
