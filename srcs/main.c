@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 04:54:19 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/29 23:26:32 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/29 23:45:25 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	main(int argc, char *argv[])
 	t_data	data;
 
 	data.zoom_factor = 100;
-	data.max_iterations = 300;
+	data.max_iterations = 30;
 	data.center.x = 0.0;
 	data.center.y = 0.0;
 	data.julia_constant.re = 0.0;

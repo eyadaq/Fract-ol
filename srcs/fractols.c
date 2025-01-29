@@ -6,7 +6,7 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 21:48:48 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/29 23:23:28 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/29 23:44:38 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,9 +110,9 @@ static void	ft_get_color(t_color *color, int iter, int max_iter, int fractal_typ
 	t = (double)iter / max_iter;
 	if (fractal_type == JULIA && iter != max_iter)
 	{
-		color->red = (int)(255 * sin(0.3 * t + 0) * 0.5 + 0.5 * 255);
-		color->green = (int)(255 * sin(0.3 * t + 2) * 0.5 + 0.5 * 255);
-		color->blue = (int)(255 * sin(0.3 * t + 4) * 0.5 + 0.5 * 255);
+		color->red   = (int)(9 * (1 - t) * t * t * t * 255);
+    	color->green = (int)(15 * (1 - t) * (1 - t) * t * t * 255);
+    	color->blue  = (int)(8.5 * (1 - t) * (1 - t) * (1 - t) * t * 255);
 	}
 	else if (fractal_type == BURNING_SHIP && iter != max_iter)
 		burning_ship_color(color, t);
