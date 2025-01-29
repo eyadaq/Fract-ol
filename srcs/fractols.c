@@ -6,13 +6,13 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 21:48:48 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/27 23:30:49 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/29 23:23:28 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int	ft_calc_pixel_mandelbront(t_data *data, t_point point)
+static int	ft_calc_pixel_mandelbront(t_data *data, t_point point)
 {
 	t_complex	z;
 	t_complex	c;
@@ -33,7 +33,7 @@ int	ft_calc_pixel_mandelbront(t_data *data, t_point point)
 	return (0);
 }
 
-int	ft_calc_pixel_julia(t_data *data, t_point point)
+static int	ft_calc_pixel_julia(t_data *data, t_point point)
 {
 	t_complex	z;
 	t_complex	c;
@@ -53,7 +53,7 @@ int	ft_calc_pixel_julia(t_data *data, t_point point)
 	return (0);
 }
 
-int	ft_calc_pixel_burning_ship(t_data *data, t_point point)
+static int	ft_calc_pixel_burning_ship(t_data *data, t_point point)
 {
 	t_complex	z;
 	t_complex	c;
@@ -77,16 +77,52 @@ int	ft_calc_pixel_burning_ship(t_data *data, t_point point)
 	}
 	return (0);
 }
-
-void	ft_get_color(t_color *color, int iter)
+static void burning_ship_color(t_color *color, double t)
 {
-	
-	color->full_color = iter * 10;
-	color->red = 255 - iter * 2;
-	color->green = 150;
-	color->blue = 200;
-	if (iter)
-		color->full_color = color->red << 16 | color->green << 8 | color->blue;
+	if (t < 0.5)
+		{
+			color->red = (int)(255 * t * 2);
+			color->green = 0;
+			color->blue = 0;
+		}
+		else if (t < 0.75)
+		{
+			color->red = 255;
+			color->green = (int)(255 * (t - 0.5) * 4);
+			color->blue = 0;
+		}
+		else
+		{
+			color->red = 255;
+			color->green = 255;
+			color->blue = (int)(255 * (t - 0.75) * 4);
+		}
+}
+static void	ft_get_color(t_color *color, int iter, int max_iter, int fractal_type)
+{
+	double	t;
+
+	if (iter == max_iter)
+	{
+		color->full_color = 0x000000;
+		return ;
+	}
+	t = (double)iter / max_iter;
+	if (fractal_type == JULIA && iter != max_iter)
+	{
+		color->red = (int)(255 * sin(0.3 * t + 0) * 0.5 + 0.5 * 255);
+		color->green = (int)(255 * sin(0.3 * t + 2) * 0.5 + 0.5 * 255);
+		color->blue = (int)(255 * sin(0.3 * t + 4) * 0.5 + 0.5 * 255);
+	}
+	else if (fractal_type == BURNING_SHIP && iter != max_iter)
+		burning_ship_color(color, t);
+	else if (fractal_type == MANDELBROT && iter != max_iter)
+	{
+		color->red = (int)(9 * (1 - t) * t * t * t * 255);
+		color->green = (int)(15 * (1 - t) * (1 - t) * t * t * 255);
+		color->blue = (int)(8.5 * (1 - t) * (1 - t) * (1 - t) * t * 255);
+	}
+	color->full_color = (color->red << 16) | (color->green << 8) | color->blue;
 }
 
 void	ft_draw_canves(t_data *data)
@@ -110,7 +146,7 @@ void	ft_draw_canves(t_data *data)
 				iter = ft_calc_pixel_julia(data, point);
 			else if (data->type == BURNING_SHIP)
 				iter = ft_calc_pixel_burning_ship(data, point);
-			ft_get_color(&color, iter);
+			ft_get_color(&color, iter, data->max_iterations, data->type);
 			ft_mlx_pixel_put(data, x, y, color.full_color);
 		}
 	}
