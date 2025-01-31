@@ -6,15 +6,15 @@
 /*   By: eaqrabaw <eaqrabaw@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 04:51:35 by eaqrabaw          #+#    #+#             */
-/*   Updated: 2025/01/30 00:41:27 by eaqrabaw         ###   ########.fr       */
+/*   Updated: 2025/01/31 23:46:42 by eaqrabaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define WIDTH 800
-# define HEIGHT 800
+# define WIDTH 350
+# define HEIGHT 350
 # define MANDELBROT 1
 # define JULIA 2
 # define BURNING_SHIP 3
