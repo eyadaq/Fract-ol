@@ -55,7 +55,7 @@ static void	ft_draw_fractal(t_data *data, char *fractal_name)
 
 void	ft_validate_input(int argc, char *argv[], t_data *data)
 {
-	if (argc == 4)
+	if (argc == 4 && (ft_strcmp(fractal_name, "mandelbrot") == 0))
 	{
 		data->julia_constant.re = ft_atod(argv[2]);
 		data->julia_constant.im = ft_atod(argv[3]);
