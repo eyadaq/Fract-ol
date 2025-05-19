@@ -26,8 +26,7 @@
 - Work with complex numbers to generate fractals.
 - Handle keyboard and mouse input for interactivity.
 - Create a visually appealing and performant fractal explorer.
-- Understand basic multithreading (bonus).
-
+  
 ---
 
 ## 🌱 Supported Fractals
@@ -36,7 +35,7 @@ The program must render at least the following fractals:
 
 - 🌀 **Mandelbrot**
 - 🔮 **Julia**
-- 🧿 **Burning Ship** (optional or bonus)
+- 🧿 **Burning Ship** (bonus)
 
 ---
 
@@ -46,13 +45,10 @@ The program must render at least the following fractals:
 |----------------------|----------------------------------|
 | Zoom in/out          | Mouse scroll up/down             |
 | Move view            | Arrow keys                       |
-| Change color scheme  | `C` key                          |
-| Reset view           | `R` key                          |
 | Exit program         | `ESC` key                        |
 
 For Julia:
-- Mouse movement can influence the fractal shape (if implemented).
-- Lock/unlock mouse interaction using a key (optional).
+- Mouse movement can influence the fractal shape.
 
 ---
 
@@ -94,7 +90,7 @@ Where `<name>` is one of:
 
 * `mandelbrot`
 * `julia`
-* `burningship` (if implemented)
+* `burningship`
 
 Example:
 
