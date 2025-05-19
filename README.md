@@ -119,6 +119,10 @@ For Julia, you may pass extra parameters (depending on your implementation):
 ```
 ./fractol julia
 ```
+or 
+```
+./fractol julia -0.8 0.156
+```
 
 **Burning Ship (Bonus)**
 
